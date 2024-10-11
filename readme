@@ -1,0 +1,11 @@
+# How to run it
+Download the foundry files from their website.
+Save as "/zip/temp.zip"
+
+Build image
+`docker build -t foundry .`
+
+Run image
+`docker run -dti -p 30000:30000 --name foundry foundry`
+
+Access on localhost:30000
