@@ -1,0 +1,7 @@
+localhost {
+	respond "Caddy online"
+}
+
+foundry.localhost {
+	reverse_proxy foundry:30000
+}

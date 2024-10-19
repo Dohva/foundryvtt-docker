@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  # Caddy reverse proxy
+  caddy:
+    image: caddy
+    container_name: caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile  # Mount the Caddyfile to the Caddy container
+      - caddy_data:/data                  # For Let's Encrypt data storage
+      - caddy_config:/config              # For Caddy's configuration data
+    networks:
+      - webnet
+
+  # Your main application
+  foundry:
+    image: foundry
+    container_name: foundry
+    expose:
+      - "30000"  # App running on port 3000 internally
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    driver: bridge
+
+volumes:
+  caddy_data:
+  caddy_config:
+
