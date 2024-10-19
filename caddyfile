@@ -1,7 +1,7 @@
-localhost {
-	respond "Caddy online"
+{$CADDY_DOMAIN} {
+    respond "Caddy online"
 }
 
-foundry.localhost {
-	reverse_proxy foundry:30000
+foundry.{$CADDY_DOMAIN} {
+    reverse_proxy foundry:30000
 }

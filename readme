@@ -9,3 +9,12 @@ Run image
 `docker run -dti -p 30000:30000 --name foundry foundry`
 
 Access on localhost:30000
+
+Before running docker compose, add the folders
+`mkdir caddy_config caddy_data`
+
+Run behind Caddy reverse proxy
+`docker compose up`
+
+Gracefully reload caddy when Caddyfile is updated
+`docker exec -w /etc/caddy caddy caddy reload`
