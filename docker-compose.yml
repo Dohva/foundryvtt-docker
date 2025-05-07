@@ -23,7 +23,7 @@ services:
     expose:
       - "30000"  # App running on port 3000 internally
     volumes:
-      - /mnt/HC_Volume_101464996/foundry/backups:/foundrydata/Backups/
+      - /foundry/volume/backups:/foundrydata
     networks:
       - webnet
 
