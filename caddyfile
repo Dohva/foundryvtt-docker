@@ -5,3 +5,7 @@
 foundry.{$CADDY_DOMAIN} {
     reverse_proxy foundry:30000
 }
+
+bigus.{$CADDY_DOMAIN} {
+    reverse_proxy zipline:3000
+}
